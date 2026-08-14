@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import profilePic from '../../assets/emma.jpg';
+import profilePic from '../../assets/try.jpg';
 
 function FmRadio() {
     const [isSpeaking, setIsSpeaking] = useState(false);

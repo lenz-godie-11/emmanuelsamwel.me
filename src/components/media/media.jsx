@@ -1,19 +1,21 @@
 function Header() {
     return (
-        <header className="flex items-center justify-between px-8 py-4 border-b border-gray-200">
+        <header className="w-full bg-black text-white border-b border-gray-800">
+            <div className="max-w-2xl mx-auto flex items-center justify-between px-0 py-4">
 
-            <div className="text-xl font-bold">
-                emmanuelsamwel.me
+                <a href="/" className="text-lg font-bold hover:text-gray-300">
+                    emmanuelsamwel.me
+                </a>
+
+                <nav>
+                    <ul className="flex items-center gap-6 text-sm font-medium">
+                        <li><a href="/about" className="hover:text-gray-300">About</a></li>
+                        <li><a href="/work" className="hover:text-gray-300">Work</a></li>
+                        <li><a href="/contact" className="hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </nav>
+
             </div>
-
-            <nav>
-                <ul className="flex items-center gap-8 text-sm font-medium">
-                    <li><a href="/" className="hover:text-blue-600">Home</a></li>
-                    <li><a href="/about" className="hover:text-blue-600">About</a></li>
-                    <li><a href="/work" className="hover:text-blue-600">Work</a></li>
-                    <li><a href="/contact" className="hover:text-blue-600">Contact</a></li>
-                </ul>
-            </nav>
         </header>
     )
 }
