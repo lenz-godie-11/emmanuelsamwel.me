@@ -2,8 +2,8 @@ import { Phone } from 'lucide-react';
 
 function Footer() {
     return (
-        <footer className="w-full bg-black text-white text-sm py-6">
-            <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-0">
+        <footer className="w-full bg-black text-white text-xs sm:text-sm py-4 sm:py-6">
+            <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 px-4 sm:px-0">
 
                 <a href="mailto:emmanueldaud358@gmail.com" className="hover:text-gray-300 transition-colors">
                     emmanueldaud358@gmail.com
