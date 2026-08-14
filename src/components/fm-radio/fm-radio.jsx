@@ -51,36 +51,38 @@ function FmRadio() {
     };
 
 
-    return (<div
-        className="relative w-full h-screen bg-black bg-contain bg-center bg-no-repeat flex items-center justify-center"
-        style={{ backgroundImage: `url(${profilePic})` }}
-    >
-        <div className="absolute inset-0 bg-black/30" />
+    return (
+    <div className="w-full min-h-screen bg-black flex items-center justify-center py-8">
+        <div className="relative max-w-2xl w-full aspect-[3/4] rounded-2xl overflow-hidden">
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${profilePic})` }}
+            />
+            <div className="absolute inset-0 bg-black/30" />
 
-        <button
-            onClick={handleSpeak}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-             w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20
-             rounded-full bg-white/80 hover:bg-white
-             flex items-center justify-center shadow-lg
-             transition-transform hover:scale-110 z-10"
-            aria-label="Play welcome message"
-        >
-            {isSpeaking ? (
-                // pause icon
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
-                    <rect x="6" y="5" width="4" height="14" />
-                    <rect x="14" y="5" width="4" height="14" />
-                </svg>
-            ) : (
-                // play icon
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <polygon points="6,4 20,12 6,20" />
-                </svg>
-            )}
-        </button>
+            <button
+                onClick={handleSpeak}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20
+                 rounded-full bg-white/80 hover:bg-white
+                 flex items-center justify-center shadow-lg
+                 transition-transform hover:scale-110 z-10"
+                aria-label="Play welcome message"
+            >
+                {isSpeaking ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                        <rect x="6" y="5" width="4" height="14" />
+                        <rect x="14" y="5" width="4" height="14" />
+                    </svg>
+                ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <polygon points="6,4 20,12 6,20" />
+                    </svg>
+                )}
+            </button>
+        </div>
     </div>
-    );
+);
 }
 
 export default FmRadio;
