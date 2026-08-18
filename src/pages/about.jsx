@@ -1,8 +1,23 @@
 import { useState } from 'react';
 import AppointmentForm from '../components/appointment/appointment-form.jsx';
+import AuthModal, { auth } from '../components/auth/auth-modal.jsx';
 
 function About() {
-  const [showForm, setShowForm] = useState(false);
+  const [showAppointment, setShowAppointment] = useState(false);
+  const [showAuth, setShowAuth] = useState(false);
+
+  const handleBookClick = () => {
+    if (auth.isLoggedIn()) {
+      setShowAppointment(true);
+    } else {
+      setShowAuth(true);
+    }
+  };
+
+  const handleAuthSuccess = () => {
+    setShowAuth(false);
+    setShowAppointment(true);
+  };
 
   return (
     <div className="w-full bg-black text-white py-10 px-4 sm:px-0">
@@ -22,10 +37,10 @@ function About() {
 
           <div className="flex flex-wrap gap-3 mt-6">
             <button
-              onClick={() => setShowForm(true)}
+              onClick={handleBookClick}
               className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-sm font-medium transition-colors"
             >
-              Schedule an appointment
+              Book a quick call
             </button>
 
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 rounded-full bg-gray-600 hover:bg-gray-500 text-sm font-medium transition-colors flex items-center gap-2">
@@ -50,7 +65,11 @@ function About() {
 
       </div>
 
-      {showForm && <AppointmentForm onClose={() => setShowForm(false)} />}
+      {showAuth && (
+        <AuthModal onClose={() => setShowAuth(false)} onSuccess={handleAuthSuccess} />
+      )}
+
+      {showAppointment && <AppointmentForm onClose={() => setShowAppointment(false)} />}
     </div>
   );
 }
